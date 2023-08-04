@@ -6,7 +6,9 @@
              version="2.2">
     <persistence-unit name="exemplo-jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>org.example.domain.Produto</class>
+        <class>org.example.domain.Carro</class>
+        <class>org.example.domain.Marca</class>
+        <class>org.example.domain.Acessorio</class>
         <!-- Outras entidades mapeadas aqui, se houver -->
 
         <properties>
