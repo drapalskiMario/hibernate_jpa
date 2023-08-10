@@ -1,7 +1,7 @@
 package org.example.dao.jpa;
 
-import org.example.dao.generic.jpa.IGenericJapDAO;
-import org.example.domain.jpa.VendaJpa;
+import org.example.dao.generic.IGenericJapDAO;
+import org.example.domain.VendaJpa;
 import org.example.exceptions.DAOException;
 import org.example.exceptions.TipoChaveNaoEncontradaException;
 

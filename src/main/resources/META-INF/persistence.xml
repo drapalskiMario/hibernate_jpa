@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="exemplo-jpa" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="postgres" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>org.example.domain.Carro</class>
         <class>org.example.domain.Marca</class>
@@ -17,6 +17,25 @@
             <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Cuidado em produção! -->
+            <property name="hibernate.show_sql" value="true"/> <!-- Cuidado em produção! -->
+            <property name="hibernate.format_sql" value="true"/> <!-- Cuidado em produção! -->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="mysql" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.example.domain.Carro</class>
+        <class>org.example.domain.Marca</class>
+        <class>org.example.domain.Acessorio</class>
+        <!-- Outras entidades mapeadas aqui, se houver -->
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/vendas"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Cuidado em produção! -->
             <property name="hibernate.show_sql" value="true"/> <!-- Cuidado em produção! -->
             <property name="hibernate.format_sql" value="true"/> <!-- Cuidado em produção! -->
